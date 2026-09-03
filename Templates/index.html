@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Predictor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f4f7fc; min-height: 100vh; display: flex; flex-direction: column; }
+        .navbar {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .navbar a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .navbar a:hover { background: #334155; color: white; }
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .hero h1 span { color: #3b82f6; }
+        .hero p {
+            color: #475569;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        .card-group {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            padding: 2.5rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: #0f172a;
+            border: 1px solid #e2e8f0;
+            min-width: 200px;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+        }
+        .card h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .card p { color: #64748b; font-size: 1rem; }
+        .card .icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">🏠 Home</a>
+        <a href="/dashboard">📊 Dashboard</a>
+        <a href="/predict">🔮 Predict</a>
+    </div>
+    <div class="hero">
+        <h1>⚡ Energy <span>Predictor</span></h1>
+        <p>Machine Learning powered dashboard to forecast building energy consumption with high accuracy.</p>
+        <div class="card-group">
+            <a href="/dashboard" class="card">
+                <span class="icon">📈</span>
+                <h2>Dashboard</h2>
+                <p>Explore visual insights</p>
+            </a>
+            <a href="/predict" class="card">
+                <span class="icon">🎯</span>
+                <h2>Predict</h2>
+                <p>Get real-time results</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

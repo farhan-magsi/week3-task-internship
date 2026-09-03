@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f4f7fc; min-height: 100vh; }
+        .navbar {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .navbar a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .navbar a:hover { background: #334155; color: white; }
+        .container {
+            max-width: 1300px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        h1 { color: #0f172a; font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .back-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+        .viz-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+        .viz-card:hover { box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .viz-card h3 {
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .viz-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #f1f5f9;
+        }
+        .placeholder {
+            background: #f1f5f9;
+            padding: 3rem;
+            text-align: center;
+            border-radius: 12px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">🏠 Home</a>
+        <a href="/dashboard">📊 Dashboard</a>
+        <a href="/predict">🔮 Predict</a>
+    </div>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+        <h1>📊 Analytics Dashboard</h1>
+        <p style="color: #64748b; margin-bottom: 2rem;">Visual insights from the energy consumption dataset.</p>
+        
+        <div class="grid">
+            <div class="viz-card">
+                <h3>Energy by Hour</h3>
+                <img src="{{ url_for('static', path='energy_by_hour.png') }}" alt="Energy by Hour">
+            </div>
+            <div class="viz-card">
+                <h3>Energy by Load Type</h3>
+                <img src="{{ url_for('static', path='energy_by_load.png') }}" alt="Energy by Load">
+            </div>
+            <div class="viz-card">
+                <h3>Correlation Heatmap</h3>
+                <img src="{{ url_for('static', path='correlation_heatmap.png') }}" alt="Correlation">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
